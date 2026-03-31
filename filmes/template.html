@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meus Filmes</title>
+</head>
+<body>
+    <h1>Top 5 Filmes do Cauã</h1>
+    <ul>
+        {% for filme in filmes %}
+            <li>
+                <strong>{{ filme.titulo }}</strong> - {{ filme.ano_lancamento }} 
+                (Diretor: {{ filme.diretor }} | Nota: {{ filme.nota_imdb }})
+            </li>
+        {% empty %}
+            <li>Nenhum filme cadastrado ainda. Vá ao /admin para adicionar!</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
